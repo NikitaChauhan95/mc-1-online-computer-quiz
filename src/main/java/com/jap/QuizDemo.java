@@ -15,11 +15,12 @@ public class QuizDemo {
             for (int index = 0; index < scores.length; index++) {
                 if (highestScore < scoresInt[index]) ;
                 highestScore = scoresInt[index];
+                nameOfSchoolHavingHighestMarks = nameOfSchool[index];
 
 
             }
 
-            return "nameOfSchoolHavingHighestMarks";
+            return nameOfSchoolHavingHighestMarks;
         } catch (NumberFormatException exception) {
             return exception.toString();
         }
@@ -30,16 +31,18 @@ public class QuizDemo {
     //Handle the NullPointerException
     public String[] convertAllNamesToCapital(String[] name) {
         String[] upperCase = new String[name.length];
-        try
-        {
+        try {
             for (int counter = 0; counter < name.length; counter++) {
-                upperCase[inde]
+                upperCase[counter] = name[counter].toUpperCase();
             }
+        } catch (NullPointerException exception) {
+            throw new RuntimeException(exception);
         }
-
         return upperCase;
+
     }
 }
+
 
 
 
